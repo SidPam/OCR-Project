@@ -1,0 +1,18 @@
+I used the alphabets csv file for training the model
+I then created a list with the target values before creating a dictionary with the character count of each letter to help separate the data into training, validation and test data
+I then omitted the label column so I could directly convert the data frame to numpy arrays to help generate the images
+
+I created two models, riyal and riyalll and chose the latter eventually as I believed the two dropout layers gave it better test results as well as the ocr seeming to work better
+I then tried to use cv2 and plt to start to generate the images from the np arrays before using the model on the generated images
+As everything seemed to work, I started reading from the target images to start seeing how my model was performing, making sure to invert the arrays as training with black on white was only working with images using black on white
+I also created a whitespace array such that if the recognised character was simply that array then a whitespace would be added to the output string
+I then ran the model to get the predicted output strings
+I then implemented the naive Bayes algorithm at its simplest and tried it on all 6 target images and while it worked each time, I knew that having one or two letters off would omit the word from calculations which hypothetically is yielding worse results
+My updated model used a function that allowed for very minor spelling mistakes on words with length > 4 characters but the implementation didn't perform well, yielding wrong results.
+My 'Updated' model though was successful and gave more correct results than the simple Naive Bayes method, hence being my preferred method for sentiment analysis in the end.
+
+
+I refered to many youtube tutorials to understand generating the OCR, as I didn't understand how to convert the neuralnine model to apply to alphabets until finally I figured it out, I also initially attempted pytorch as I've heard of how PyTorch is better to learn than TensorFlow but it wasn't working on my laptop and with time ticking, I chose to learn the TensorFlow method instead of troubleshoot.
+I used the jurafsky chapter 4 to understand Naive Bayes while also watching a couple of videos to help me understand the math behind it more.
+The rest of the work such as troubleshooting the poor accuracy on target_images was done on my own by viewing plots of the letters to help understand why it could be working so poorly.
+
